@@ -1,3 +1,21 @@
+/// <reference path="lib/phaser.d.ts" />
+class pipapong extends Phaser.Game {
+    construtor() {
+        let gameConfig = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 200 }
+                }
+            },
+            scene: [Welcome]
+        };
+        this.game = new Phaser.Game(gameConfig);
+    }
+}
 //class Greeter {
 //    element: HTMLElement;
 //    span: HTMLElement;
