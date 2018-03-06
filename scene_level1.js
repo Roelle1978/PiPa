@@ -14,9 +14,7 @@ class SceneLevel01 extends Phaser.Scene {
         this.paddleLeft = this.create_paddle(20, 200);
         this.paddleRight = this.create_paddle(780, 200);
         this.ball = this.create_ball(400, 300);
-        this.ball.setVelocity(200, 100);
-        this.physics.collide(this.paddleLeft, this.ball, this.hitPaddle);
-        this.physics.collide(this.paddleRight, this.ball, this.hitPaddle);
+        this.ball.setVelocity(400, 200);
         this.ball.debugShowBody = true;
         this.ball.debugShowVelocity = true;
         this.physics.add.collider(this.ball, this.paddleRight, this.hitPaddle, null, this);

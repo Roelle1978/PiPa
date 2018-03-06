@@ -30,10 +30,7 @@
         this.paddleRight = this.create_paddle(780, 200);
 
         this.ball = this.create_ball(400, 300);
-        this.ball.setVelocity(200, 100);
-
-        this.physics.collide(this.paddleLeft, this.ball, this.hitPaddle);
-        this.physics.collide(this.paddleRight, this.ball, this.hitPaddle);
+        this.ball.setVelocity(400, 200);
 
         this.ball.debugShowBody = true;
         this.ball.debugShowVelocity = true;
