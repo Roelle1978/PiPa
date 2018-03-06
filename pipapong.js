@@ -1,7 +1,6 @@
-/// <reference path="lib/phaser.d.ts" />
-class Pipapong {
-    constructor() {
-        const gameConfig = {
+var Pipapong = (function () {
+    function Pipapong() {
+        var gameConfig = {
             type: Phaser.AUTO,
             parent: 'content',
             width: 800,
@@ -9,17 +8,17 @@ class Pipapong {
             physics: {
                 default: 'arcade',
                 arcade: {
-                    gravity: { y: 1 }
+                    gravity: { y: 0 }
                 }
             },
             scene: [SceneWelcome, SceneLevel01]
         };
         this.game = new Phaser.Game(gameConfig);
     }
-    create() {
-    }
-}
-window.onload = () => {
+    Pipapong.prototype.create = function () {
+    };
+    return Pipapong;
+}());
+window.onload = function () {
     var game = new Pipapong();
 };
-//# sourceMappingURL=pipapong.js.map

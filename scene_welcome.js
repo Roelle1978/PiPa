@@ -1,15 +1,26 @@
-class SceneWelcome extends Phaser.Scene {
-    constructor() {
-        super({
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SceneWelcome = (function (_super) {
+    __extends(SceneWelcome, _super);
+    function SceneWelcome() {
+        return _super.call(this, {
             key: 'Scene_Welcome'
-        });
+        }) || this;
     }
-    preload() {
+    SceneWelcome.prototype.preload = function () {
         this.load.image('sky', 'media/space3.png');
         this.load.image('logo', 'media/pipapong2.png');
         this.load.image('red', 'media/red.png');
-    }
-    create() {
+    };
+    SceneWelcome.prototype.create = function () {
         this.add.image(400, 300, 'sky');
         var particles = this.add.particles('red');
         var emitter = particles.createEmitter({
@@ -26,7 +37,7 @@ class SceneWelcome extends Phaser.Scene {
         this.input.keyboard.on('keydown_S', function (event) {
             this.scene.start("Scene_Level01");
         }, this);
-    }
-    update() { }
-}
-//# sourceMappingURL=scene_welcome.js.map
+    };
+    SceneWelcome.prototype.update = function () { };
+    return SceneWelcome;
+}(Phaser.Scene));
