@@ -6,11 +6,15 @@
         });
     }
 
-    paddleLeft: Phaser.GameObjects.Sprite;
-    paddleRight: Phaser.GameObjects.Sprite;
-    ball: Phaser.GameObjects.Sprite;
+    paddleLeft: any;
+    paddleRight: any;
+    ball: any;
     ball_launched: boolean;
     ball_velocity: number;
+
+
+
+
 
 
     preload() {
@@ -26,6 +30,20 @@
         this.paddleRight = this.create_paddle(780, 200);
 
         this.ball = this.create_ball(400, 300);
+        this.ball.setVelocity(200, 100);
+
+        this.physics.collide(this.paddleLeft, this.ball, this.hitPaddle);
+        this.physics.collide(this.paddleRight, this.ball, this.hitPaddle);
+
+        this.ball.debugShowBody = true;
+        this.ball.debugShowVelocity = true;
+
+        this.physics.add.collider(this.ball, this.paddleRight, this.hitPaddle, null, this);
+        this.physics.add.collider(this.ball, this.paddleLeft, this.hitPaddle, null, this);
+    }
+
+    hitPaddle() {
+        console.log("test");
     }
 
     update() {
@@ -34,32 +52,32 @@
     }
 
 
-    create_paddle(x: number, y: number): Phaser.GameObjects.Sprite {
-        var paddle = this.add.sprite(x, y, 'paddle');
-        // paddle.anchor.setTo(0.5,0.5);
-        // game.phyisics.arcade.enable(paddle)
-        // paddle.body.collideWorldBounds = true;
+    create_paddle(x: number, y: number): Phaser.Physics.Arcade.Image {
+
+        var paddle = this.physics.add.image(x, y, 'paddle');
+        paddle.setCollideWorldBounds(true);
+        paddle.setImmovable(true);
         return paddle;
     }
 
-    control_paddle(paddle: Phaser.GameObjects.Sprite , y: number) {
+    control_paddle(paddle: Phaser.Physics.Arcade.Image , y: number) {
         paddle.y = y;
     }
 
-    create_ball(x:number, y:number): Phaser.GameObjects.Sprite {
-        var ball = this.add.sprite(x, y, 'ball');
-        // ball.anchor.setTo(0.5,0,5);
-        // game.phyisics.arcade.enable(ball)
-        // ball.body.collideWorldBounds = true;
-        // ball.body.bounce.setTo(0.5,0.5)
+    create_ball(x: number, y: number): Phaser.Physics.Arcade.Image {
+        var ball = this.physics.add.image(x, y, 'ball');
+        ball.setBounce(1, 1);
+        ball.setCollideWorldBounds(true);
         return ball;
     }
 
     launch_ball():void {
         if (this.ball_launched) {
-            
-        }
 
+        } else {
+            //this.ball.
+        }
+        
     }
 
 }

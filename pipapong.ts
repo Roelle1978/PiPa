@@ -12,7 +12,7 @@ class Pipapong {
             physics: {
                 default: 'arcade',
                 arcade: {
-                    gravity: { y: 20 }
+                    gravity: { y: 200 }
                 }
             },
             scene: [SceneWelcome, SceneLevel01]
