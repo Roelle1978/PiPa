@@ -22,6 +22,10 @@ class SceneWelcome extends Phaser.Scene {
         logo.setBounce(1, 1);
         logo.setCollideWorldBounds(true);
         emitter.startFollow(logo, 0, 0, true);
+        var text = this.add.text(5, 5, "Press [S] to start", { font: "30px Arial" });
+        this.input.keyboard.on('keydown_S', function (event) {
+            this.scene.start("Scene_Level01");
+        }, this);
     }
     update() { }
 }

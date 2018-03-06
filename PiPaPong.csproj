@@ -83,6 +83,7 @@
     <Content Include="lib\phaser-arcade-physics.js" />
     <Content Include="lib\phaser-arcade-physics.min.js" />
     <Content Include="lib\phaser.min.js" />
+    <Content Include="media\paddle.png" />
     <Content Include="media\pipapong2.png" />
     <Content Include="media\red.png" />
     <Content Include="media\space3.png" />
