@@ -6,10 +6,14 @@ class SceneLevel01 extends Phaser.Scene {
     }
     preload() {
         this.load.image('paddle', 'media/paddle.png');
+        this.load.image('ball', 'media/ball.png');
     }
     create() {
+        this.ball_launched = false;
+        this.ball_velocity = 400;
         this.paddleLeft = this.create_paddle(20, 200);
         this.paddleRight = this.create_paddle(780, 200);
+        this.ball = this.create_ball(400, 300);
     }
     update() {
         this.control_paddle(this.paddleLeft, this.input.y);
@@ -24,6 +28,18 @@ class SceneLevel01 extends Phaser.Scene {
     }
     control_paddle(paddle, y) {
         paddle.y = y;
+    }
+    create_ball(x, y) {
+        var ball = this.add.sprite(x, y, 'ball');
+        // ball.anchor.setTo(0.5,0,5);
+        // game.phyisics.arcade.enable(ball)
+        // ball.body.collideWorldBounds = true;
+        // ball.body.bounce.setTo(0.5,0.5)
+        return ball;
+    }
+    launch_ball() {
+        if (this.ball_launched) {
+        }
     }
 }
 //# sourceMappingURL=scene_level1.js.map
