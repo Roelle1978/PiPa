@@ -1,8 +1,8 @@
-﻿class WelcomeScene extends Phaser.Scene {
+﻿class SceneWelcome extends Phaser.Scene {
 
     constructor() {
         super({
-            key: 'WelcomeScene'
+            key: 'Scene_Welcome'
         });
     }
 

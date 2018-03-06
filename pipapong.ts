@@ -15,7 +15,7 @@ class Pipapong {
                     gravity: { y: 200 }
                 }
             },
-            scene: [ WelcomeScene ]
+            scene: [SceneWelcome, SceneLevel01]
         };
 
         this.game = new Phaser.Game(gameConfig);

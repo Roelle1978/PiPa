@@ -91,6 +91,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="pipapong.ts" />
     <TypeScriptCompile Include="lib\phaser.d.ts" />
+    <TypeScriptCompile Include="scene_level1.ts" />
     <TypeScriptCompile Include="scene_welcome.ts" />
   </ItemGroup>
   <ItemGroup>
