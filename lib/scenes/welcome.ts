@@ -1,4 +1,6 @@
-﻿class SceneWelcome extends Phaser.Scene {
+﻿import Phaser from 'phaser'
+
+export default class WelcomeScene extends Phaser.Scene {
 
     constructor() {
         super({
@@ -32,9 +34,9 @@
         emitter.startFollow(logo, 0, 0, true);
 
         var text = this.add.text(5, 5, "Press [S] to start", { font: "30px Arial" });
-        
 
-        this.input.keyboard.on('keydown_S', function (event) {
+
+        this.input.keyboard.on('keydown_S', function (event: Event) {
             this.scene.start("Scene_Level01");
         }, this);
 

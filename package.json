@@ -1,0 +1,35 @@
+{
+  "name": "pipa",
+  "version": "0.0.1",
+  "description": "This project is being developed using VSCode and typescript wherever possible. Make sure you have the `editorconfig`-plugin installed.",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --mode development --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/florianb/PiPa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/florianb/PiPa/issues"
+  },
+  "homepage": "https://github.com/florianb/PiPa#readme",
+  "dependencies": {
+    "phaser": "^3.2.0"
+  },
+  "devDependencies": {
+    "raw-loader": "^0.5.1",
+    "ts-loader": "^4.0.1",
+    "typescript": "^2.7.2",
+    "webpack": "^4.1.0",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  }
+}

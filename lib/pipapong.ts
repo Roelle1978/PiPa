@@ -1,4 +1,7 @@
-﻿/// <reference path="lib/phaser.d.ts" />
+﻿import Phaser from 'phaser'
+
+import WelcomeScene from './scenes/welcome'
+import Level1Scene from './scenes/level-1'
 
 class Pipapong {
 
@@ -15,7 +18,7 @@ class Pipapong {
                     gravity: { y: 0 }
                 }
             },
-            scene: [SceneWelcome, SceneLevel01]
+            scene: [WelcomeScene, Level1Scene]
         };
 
         this.game = new Phaser.Game(gameConfig);
