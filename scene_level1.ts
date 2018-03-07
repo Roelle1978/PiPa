@@ -1,6 +1,4 @@
-﻿import Phaser from 'phaser'
-
-export default class Level1Scene extends Phaser.Scene {
+﻿class SceneLevel01 extends Phaser.Scene {
 
     constructor() {
         super({
@@ -60,7 +58,7 @@ export default class Level1Scene extends Phaser.Scene {
         this.physics.add.collider(<any>s4, this.ball, null, null, this);
     }
 
-    setSquares(x: int, y: int) {
+    setSquares(x, y) {
         return this.physics.add.image(x, y, 'square').setImmovable(true);
     }
 
@@ -112,7 +110,7 @@ export default class Level1Scene extends Phaser.Scene {
         } else {
             //this.ball.
         }
-
+        
     }
 
 }
